@@ -1,0 +1,198 @@
+/* Palette: 3 colours */
+:root {
+  --ink: #16293f;     
+  --brand: #0b63ce;   
+  --soft: #eef4fb;    
+  --max: 60rem;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--ink);
+  line-height: 1.6;
+  background: #fff;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 0.75rem; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h2 { font-size: 1.75rem; }
+
+a { color: var(--brand); }
+
+/* Visible keyboard focus */
+a:focus-visible, .button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+
+/* Navigation (Flexbox) */
+header { background: var(--ink); position: sticky; top: 0; z-index: 10; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.logo { color: #fff; font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+
+.nav-links { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.25rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav-links a:hover { border-bottom-color: #fff; }
+nav a:focus-visible { outline-color: #fff; }
+
+/* Sections */
+section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3.5rem 1rem;
+}
+
+/* Hero (Flexbox) */
+.hero { display: flex; align-items: center; gap: 2rem; }
+
+.avatar {
+  flex: 0 0 9rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.lead { font-size: 1.1rem; max-width: 36rem; }
+
+.button {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: transform 0.2s, background 0.2s;
+}
+.button:hover { background: var(--ink); transform: translateY(-2px); }
+
+/* Skills + Project cards (Grid) */
+.cards {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+#skills .cards li {
+  padding: 1rem;
+  background: var(--soft);
+  border: 1px solid #d5e1ee;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card {
+  padding: 1.25rem;
+  background: var(--soft);
+  border: 1px solid #d5e1ee;
+  border-radius: 0.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card p { margin: 0 0 0.75rem; }
+
+#skills .cards li:hover, .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(22, 41, 63, 0.12);
+}
+
+/* Contact */
+.contact-links { display: flex; flex-wrap: wrap; gap: 0.75rem; list-style: none; padding: 0; }
+.contact-links a {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--brand);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-links a:hover { background: var(--brand); color: #fff; }
+
+/* Contact details + form (Grid) */
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+}
+
+.contact-info { font-style: normal; }
+.contact-info p { margin: 0 0 0.5rem; }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  background: var(--soft);
+  border: 1px solid #d5e1ee;
+  border-radius: 0.75rem;
+}
+
+.contact-form label { font-weight: 600; }
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  padding: 0.7rem;
+  border: 1px solid #9db3c9;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.contact-form .button { border: 0; cursor: pointer; font: inherit; font-weight: 600; margin-top: 0.5rem; }
+
+/* Footer */
+footer { background: var(--ink); color: #fff; text-align: center; padding: 1.25rem 1rem; }
+footer p { margin: 0; }
+
+/* Mobile: below 700px */
+@media (max-width: 700px) {
+  nav { flex-direction: column; gap: 0.5rem; }
+  .nav-links { width: 100%; justify-content: space-around; gap: 0; }
+  .nav-links a { display: block; padding: 0.75rem 0.5rem; }  /* bigger tap targets */
+
+  .hero { flex-direction: column; text-align: center; }
+  .lead { margin-left: auto; margin-right: auto; }
+
+  .button, .contact-links a { padding: 0.9rem 1.5rem; }
+  .contact-links { flex-direction: column; }
+  .contact-links a { display: block; text-align: center; }
+}
+

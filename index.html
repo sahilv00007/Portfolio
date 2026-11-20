@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal portfolio of a beginner web developer: bio, skills, projects and contact links.">
+  <title>sahil  - Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="logo" href="#about">S</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="hero">
+      <div class="avatar" role="img" aria-label="Initial S in a circle, used as a profile picture">S</div>
+      <div>
+        <h1>Hi, I am sahil </h1>
+        <p class="lead">I am a beginner web developer who builds simple, fast and mobile-friendly websites.
+          I am learning fullstack development and love turning ideas into clean pages.</p>
+        <a class="button" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="cards">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>Flexbox &amp; Grid</li>
+        <li>JavaScript (basics)</li>
+        <li>Git &amp; GitHub</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Project One</h3>
+          <p>my first project is calculater .</p>
+          <a href="#" aria-label="View Project One">View project</a>
+        </article>
+        <article class="card">
+          <h3>Project Two</h3>
+          <p>my secound projt is portfolio portal.</p>
+          <a href="#" aria-label="View Project Two">View project</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+            <div class="contact-grid">
+        <address class="contact-info">
+          <h3>Details</h3>
+          <p><strong>Email:</strong> <a href="mailto:yourname@example.com">sahilxyz@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+910000000000">+91 00000 00000</a></p>
+          <p><strong>Location:</strong> Gujarat, India</p>
+        </address>
+
+        <form class="contact-form" action="mailto:yourname@example.com" method="post" enctype="text/plain">
+          <h3>Send a message</h3>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="button">Send message</button>
+        </form>
+      </div>
